@@ -1,0 +1,22 @@
+opencti:
+  url: 'http://localhost:PORT'
+  token: 'ChangeMe'
+
+connector:
+  id: '{{ cookiecutter.connector_id }}'
+  name: '{{ cookiecutter.connector_name }}'
+  scope: '{{ cookiecutter.connector_name }}'
+  log_level: 'error'
+
+  {%- if cookiecutter.connector_type == "External Import" -%}
+  duration_period: 'PT5M'
+  {%- elif cookiecutter.connector_type in [ "Internal Enrichment", "Internal Export File", "Internal Import File" ] -%}
+  auto: False
+  {%- elif cookiecutter.connector_type == "Stream" -%}
+  live_stream_id: 'live'
+  live_stream_listen_delete: True
+  live_stream_no_dependencies: True
+  {% endif %}
+
+{{ cookiecutter.connector_slug }}:
+  api_key: 'ChangeMe'

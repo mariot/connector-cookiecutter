@@ -1,0 +1,12 @@
+[project]
+name = "{{ cookiecutter.connector_slug }}"
+version = "0.1.0"
+description = "{{ cookiecutter.connector_description }}"
+readme = "README.md"
+requires-python = ">=3.11, <3.13"
+dependencies = [
+    "pycti==6.8.10",
+    "pydantic==2.12.3",
+    "pydantic-settings==2.11.0",
+    "connectors-sdk @ git+https://github.com/OpenCTI-Platform/connectors.git@6.8.9#subdirectory=connectors-sdk"
+]

@@ -1,0 +1,13 @@
+{
+  "connector_id": "{{ uuid4() }}",
+  "connector_name": "My Connector",
+  "connector_description": "My Connector Description",
+  "connector_type": ["External Import", "Internal Enrichment", "Internal Export File", "Internal Import File", "Stream"],
+  "config_file": ["yml file", ".env file", "Environment variables"],
+  "connector_scope": "{{ cookiecutter.connector_name }}",
+  "connector_slug": "{{ cookiecutter.connector_name|lower|replace(' ', '_') }}",
+  "connector_upper_slug": "{{ cookiecutter.connector_name|upper|replace(' ', '_') }}",
+  "connector_pascal_case": "{{ cookiecutter.connector_name|title|replace(' ', '') }}",
+  "opencti_url": "http://localhost:8080",
+  "opencti_token": "your_token_here"
+}
